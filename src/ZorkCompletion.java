@@ -3,9 +3,12 @@ import java.util.Random;
 public class ZorkCompletion {
 	static Scanner darkly = new Scanner(System.in);
 	static boolean secret=false;
+	static int counter=0;
 	private static void roomDescribe(String where, String[] stuff, String directions)
 	{
 		System.out.println("You are in " + where);
+		counter ++;
+		System.out.println("You visted rooms "+counter+" times");
 		for (String thing : stuff) {
 			System.out.println("You see " + thing);
 		}
