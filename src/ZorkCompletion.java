@@ -2,24 +2,46 @@ import java.util.Scanner;
 import java.util.Random;
 public class ZorkCompletion {
 	static Scanner darkly = new Scanner(System.in);
+	static Random rnd=new Random();
 	static boolean secret=false;
 	static int counter=0;
+	static int skeleton=0,box=0,dust=0;
+	static int piano=0,scorpion=0;
+	static int gold=0,spiders=0;
+	static int chest=0,bats=0;
+	static int m1=rnd.nextInt(1001),m2=rnd.nextInt(1001),m3=rnd.nextInt(1001);
+	static int m4=rnd.nextInt(1001),m5=rnd.nextInt(1001),m6=rnd.nextInt(1001);
+	static int m7=rnd.nextInt(1001),m8=rnd.nextInt(1001),money=0;
 	private static void roomDescribe(String where, String[] stuff, String directions)
 	{
 		System.out.println("You are in " + where);
-		counter ++;
 		System.out.println("You visted rooms "+counter+" times");
 		for (String thing : stuff) {
 			System.out.println("You see " + thing);
 		}
 		System.out.println("You can go " + directions);
+		
 	}
 	
 	public static void room0()
 	{
+		int i=1+rnd.nextInt(4);
 		System.out.println("You are outside of the house now.");
 		System.out.println("Game over");
 		System.out.println("Never come again.Hahahahaha");
+		System.out.println("You saw scorpion "+scorpion+" times");
+		System.out.println("You saw piano "+piano+" times");
+		System.out.println("You saw spiders "+spiders+" times");
+		System.out.println("You saw dust "+dust+" times");
+		System.out.println("You saw empty box "+box+" times");
+		System.out.println("You saw bats "+bats+" times");
+		System.out.println("You saw treasure chest "+chest+" times");
+		System.out.println("You saw walking skeletons "+skeleton+" times");
+		System.out.println("You saw gold "+gold+" times");
+		System.out.println("You have "+money+" dollars in your pocket.");
+		if (i==2){
+		System.out.println("You are followed by a ghost of zork, hahahahahahaha");	
+		}
 	}
 	
 	public static void room1()
@@ -28,7 +50,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "a dead scorpion";
 		String direct = " to the north (n) or the south (s)";
-		
+		scorpion++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -50,7 +77,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "a piano";
 		String direct = " to the east (e), the south (s) or the west (w)";
-		
+		piano ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 			roomDescribe(place, things, direct);
@@ -75,7 +107,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "spiders";
 		String direct = " to the north (n) or the east (e)";
-		
+		spiders ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -96,7 +133,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "bats";
 		String direct = " to the north (n) or the west (w)";
-		
+		bats ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -117,7 +159,13 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "dust and an empty box";
 		String direct = " to the south (s)";
-		
+		dust ++;
+		box ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -135,6 +183,12 @@ public class ZorkCompletion {
 		String place = "the Vault";
 		String[] things = new String[1];
 		things[0] = "three walking skeletons";
+		skeleton ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		Random rnd=new Random();
 		int i=1+rnd.nextInt(4);
 		if(i!=2){
@@ -180,7 +234,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "a treasure chest";
 		String direct = " to the west (w) or the south (s)";
-		
+		chest ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -201,7 +260,12 @@ public class ZorkCompletion {
 		String[] things = new String[1];
 		things[0] = "piles of gold";
 		String direct = " to the west (w)";
-		
+		gold ++;
+		counter ++;
+		if(m1!=0){
+			money+=m1;
+			m1=0;
+		}
 		do
 		{
 		roomDescribe(place, things, direct);
@@ -217,7 +281,8 @@ public class ZorkCompletion {
 	
 	
 	public static void main(String[] args) {
-		room1();
+	
+			room1();
 	}
 
 }
