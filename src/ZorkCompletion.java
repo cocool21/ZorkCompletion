@@ -4,7 +4,7 @@ public class ZorkCompletion {
 	static Scanner darkly = new Scanner(System.in);
 	static Random rnd=new Random();
 	static boolean secret=false, quit=false;
-	static int counter=0;
+	static int counter=0,room=0;
 	static int skeleton=0,box=0,dust=0;
 	static int piano=0,scorpion=0;
 	static int gold=0,spiders=0;
@@ -16,6 +16,7 @@ public class ZorkCompletion {
 	{
 		System.out.println("You are in " + where);
 		System.out.println("You visted rooms "+counter+" times");
+		System.out.println("You have found  "+room+" rooms");
 		for (String thing : stuff) {
 			System.out.println("You see " + thing);
 		}
@@ -29,6 +30,8 @@ public class ZorkCompletion {
 		System.out.println("You are outside of the house now.");
 		System.out.println("Game over");
 		System.out.println("Never come again.Hahahahaha");
+		System.out.println("You visted rooms "+counter+" times");
+		System.out.println("You have found  "+room+" rooms");
 		System.out.println("You saw scorpion "+scorpion+" times");
 		System.out.println("You saw piano "+piano+" times");
 		System.out.println("You saw spiders "+spiders+" times");
@@ -56,6 +59,7 @@ public class ZorkCompletion {
 		if(m1!=0){
 			money+=m1;
 			m1=0;
+			room++;
 		}
 		do
 		{
@@ -84,6 +88,7 @@ public class ZorkCompletion {
 		if(m2!=0){
 			money+=m2;
 			m2=0;
+			room++;
 		}
 		do
 		{
@@ -114,6 +119,7 @@ public class ZorkCompletion {
 		if(m3!=0){
 			money+=m3;
 			m3=0;
+			room++;
 		}
 		do
 		{
@@ -140,6 +146,7 @@ public class ZorkCompletion {
 		if(m4!=0){
 			money+=m4;
 			m4=0;
+			room++;
 		}
 		do
 		{
@@ -167,6 +174,7 @@ public class ZorkCompletion {
 		if(m5!=0){
 			money+=m5;
 			m5=0;
+			room++;
 		}
 		do
 		{
@@ -190,6 +198,7 @@ public class ZorkCompletion {
 		if(m6!=0){
 			money+=m6;
 			m6=0;
+			room++;
 		}
 		Random rnd=new Random();
 		int i=1+rnd.nextInt(4);
@@ -241,6 +250,7 @@ public class ZorkCompletion {
 		if(m7!=0){
 			money+=m7;
 			m7=0;
+			room++;
 		}
 		do
 		{
@@ -267,6 +277,7 @@ public class ZorkCompletion {
 		if(m8!=0){
 			money+=m8;
 			m8=0;
+			room++;
 		}
 		do
 		{
