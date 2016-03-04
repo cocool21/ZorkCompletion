@@ -3,7 +3,7 @@ import java.util.Random;
 public class ZorkCompletion {
 	static Scanner darkly = new Scanner(System.in);
 	static Random rnd=new Random();
-	static boolean secret=false;
+	static boolean secret=false, quit=false;
 	static int counter=0;
 	static int skeleton=0,box=0,dust=0;
 	static int piano=0,scorpion=0;
@@ -42,6 +42,7 @@ public class ZorkCompletion {
 		if (i==2){
 		System.out.println("You are followed by a ghost of zork, hahahahahahaha");	
 		}
+		
 	}
 	
 	public static void room1()
@@ -64,10 +65,11 @@ public class ZorkCompletion {
 		
 		if (choice.equals("n")) 
 		{
-			room2();
+			room2();break;
 			}else if(choice.equals("s")){
-			room0();break;}	
-			} while (1==1);
+			    quit=true;
+				room0();break;}	
+			} while (quit==false);
 		
 	}
 	
@@ -79,9 +81,9 @@ public class ZorkCompletion {
 		String direct = " to the east (e), the south (s) or the west (w)";
 		piano ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m2!=0){
+			money+=m2;
+			m2=0;
 		}
 		do
 		{
@@ -99,7 +101,7 @@ public class ZorkCompletion {
 			{
 				room3();
 			}
-		} while (1==1);
+		} while (quit==false);
 	}
 	public static void room3()
 	{
@@ -109,9 +111,9 @@ public class ZorkCompletion {
 		String direct = " to the north (n) or the east (e)";
 		spiders ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m3!=0){
+			money+=m3;
+			m3=0;
 		}
 		do
 		{
@@ -125,7 +127,7 @@ public class ZorkCompletion {
 		}else if (choice.equals("e")){
 			room2();
 		}
-		} while (1==1);
+		} while (quit==false);
 	}
 	public static void room4()
 	{
@@ -135,9 +137,9 @@ public class ZorkCompletion {
 		String direct = " to the north (n) or the west (w)";
 		bats ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m4!=0){
+			money+=m4;
+			m4=0;
 		}
 		do
 		{
@@ -151,7 +153,7 @@ public class ZorkCompletion {
 		}else if (choice.equals("w")){
 			room2();
 		}
-		} while (1==1);
+		} while (quit==false);
 	}
 	public static void room5()
 	{
@@ -162,9 +164,9 @@ public class ZorkCompletion {
 		dust ++;
 		box ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m5!=0){
+			money+=m5;
+			m5=0;
 		}
 		do
 		{
@@ -176,7 +178,7 @@ public class ZorkCompletion {
 		{
 			room3();
 		}
-		} while (1==1);
+		} while (quit==false);
 	}
 	public static void room6()
 	{
@@ -185,9 +187,9 @@ public class ZorkCompletion {
 		things[0] = "three walking skeletons";
 		skeleton ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m6!=0){
+			money+=m6;
+			m6=0;
 		}
 		Random rnd=new Random();
 		int i=1+rnd.nextInt(4);
@@ -209,7 +211,7 @@ public class ZorkCompletion {
 		{
 			room7();
 		}
-		} while (1==1);}else{
+		} while (quit==false);}else{
 			String direct = " to the east normal door(n) or secret door(s)";
 		
 		do
@@ -224,7 +226,7 @@ public class ZorkCompletion {
 		}else if(choice.equals("s")){
 			room8();
 		}
-		} while (1==1);
+		} while (quit==false);
 			
 		}
 	}
@@ -236,9 +238,9 @@ public class ZorkCompletion {
 		String direct = " to the west (w) or the south (s)";
 		chest ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m7!=0){
+			money+=m7;
+			m7=0;
 		}
 		do
 		{
@@ -252,7 +254,7 @@ public class ZorkCompletion {
 		}else if(choice.equals("s")){
 			room4();
 		}
-		} while (1==1);
+		} while (quit==false);
 	}
 	public static void room8()
 	{
@@ -262,9 +264,9 @@ public class ZorkCompletion {
 		String direct = " to the west (w)";
 		gold ++;
 		counter ++;
-		if(m1!=0){
-			money+=m1;
-			m1=0;
+		if(m8!=0){
+			money+=m8;
+			m8=0;
 		}
 		do
 		{
@@ -276,7 +278,7 @@ public class ZorkCompletion {
 		{
 			room6();
 		}
-		} while (1==1);
+		} while (quit==false);
 	}
 	
 	
